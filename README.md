@@ -4,7 +4,7 @@ Protótipo full-stack de plataforma web que conecta viajantes a destinos incrív
 
 ---
 
-## 🏗 Arquitetura do Sistema (medidas aproximadas em cm)
+## 🏗 Arquitetura do Sistema
 
 ```mermaid
 flowchart LR
@@ -36,66 +36,5 @@ flowchart LR
     end
 
     %% Integrações
-
-✨ Funcionalidades
-
-Frontend (Angular 18 SPA)
-
-Landing Page responsiva (Hero, About Us, Benefits, CTA)
-
-Catálogo de Destinos: Grid de cards com imagens, descrição e preço
-
-Cards interativos com animações suaves
-
-Formulário de contato com validação e envio via API
-
-SEO otimizado
-
-Backend (Spring Boot REST API)
-
-Controller: CRUD endpoints (/api/destinations)
-
-Service: Lógica de negócio, validações
-
-Repository: JPA/Hibernate
-
-Database (PostgreSQL)
-
-destinations e users com campos principais para protótipo
-
-⚡ Tecnologias
-
-Frontend: Angular 18, TypeScript, Angular Material, SCSS, RxJS
-Backend: Spring Boot 3, Java 17, Maven, JPA/Hibernate
-Database: PostgreSQL 14+
-DevOps: Docker, Docker Compose, Nginx
-Boas práticas: Clean Code, modularização, SPA, Lazy Loading, SEO
-
-📈 Status & Próximos Passos
-
-Protótipo full-stack em desenvolvimento
-
-Funcionalidades futuras: JWT, dashboard, carrinho e pagamentos, busca avançada, reviews
-
-💡 Como Executar
-
-Pré-requisitos: Docker Desktop, Node.js 18+, Java 17+, PostgreSQL
-
-git clone [URL_DO_REPOSITORIO]
-cd boraviajar.com.br
-docker-compose up --build
-
-
-Frontend: http://localhost
-
-Backend API: http://localhost:8080
-
-PostgreSQL: localhost:5432
-
-🎯 Impacto
-
-Demonstra habilidades em desenvolvimento full-stack, integração de sistemas, arquitetura modular e boas práticas de engenharia de software. Protótipo que une design moderno, UX intuitiva e backend robusto.
-
-#FullStack #Angular #SpringBoot #Java #PostgreSQL #Docker #TravelTech #WebDevelopment #UIUX #Prototype #ResponsiveDesign
     FE -->|HTTP REST API| BE
     BE -->|JPA/Hibernate| DB
