@@ -1,37 +1,53 @@
-# 🚀 BoraViajar – Protótipo Full-Stack de Descoberta de Destinos
+# BoraViajar – Protótipo Full-Stack de Descoberta de Destinos
 
-Protótipo full-stack de plataforma web que conecta viajantes a destinos incríveis. Desenvolvido com **Angular 18 (SPA)** no frontend, **Spring Boot 3 + Java 17** no backend e **PostgreSQL** como banco de dados. Foco em escalabilidade, performance e UX.
-
----
-
-## 🏗 Arquitetura do Sistema
+## Diagrama de Arquitetura
+## Arquitetura Full-Stack
 
 ```mermaid
-flowchart LR
-    %% Frontend ~30cm width
-    subgraph FE[Frontend - Angular 18 SPA (~30cm)]
+graph TD
+    A[Frontend - Angular 18 SPA] -->|REST API| B[Backend - Java Spring Boot]
+    B -->|JPA/Hibernate| C[Database - PostgreSQL]
+
+    subgraph Frontend
+        A1[Landing Page] 
+        A2[Catálogo de Destinos] 
+        A3[Cards Interativos]
+        A4[Formulário de Contato]
+        A1 --> A2 --> A3 --> A4
+flowchart TB
+    %% Frontend
+    subgraph FE[Frontend - Angular 18 SPA]
         direction TB
-        FE1[Landing Page 6x2cm]
-        FE2[Catálogo de Destinos 8x4cm]
-        FE3[Cards Interativos 4x3cm]
-        FE4[Formulário de Contato 6x3cm]
+        FE1[Landing Page]
+        FE2[Catálogo de Destinos]
+        FE3[Cards Interativos]
+        FE4[Formulário de Contato]
         FE1 --> FE2 --> FE3 --> FE4
     end
 
-    %% Backend ~25cm width
-    subgraph BE[Backend - Spring Boot REST API (~25cm)]
+    subgraph Backend
+        B1[Controller - REST Endpoints]
+        B2[Service - Lógica de Negócio]
+        B3[Repository - JPA/Hibernate]
+        B1 --> B2 --> B3
+    %% Backend
+    subgraph BE[Backend - Java Spring Boot]
         direction TB
-        BE1[Controller - Endpoints CRUD 6x2cm]
-        BE2[Service - Business Logic 7x3cm]
-        BE3[Repository - JPA/Hibernate 6x3cm]
+        BE1[Controller - REST Endpoints]
+        BE2[Service - Lógica de Negócio]
+        BE3[Repository - JPA/Hibernate]
         BE1 --> BE2 --> BE3
     end
 
-    %% Database ~15cm width
-    subgraph DB[Database - PostgreSQL (~15cm)]
+    subgraph Database
+        C1[Destinations Table]
+        C2[Users Table]
+        C1 --> C2
+    %% Database
+    subgraph DB[Database - PostgreSQL]
         direction TB
-        DB1[destinations: id, name, description, price, image_url, location 5x3cm]
-        DB2[users: id, name, email, message, created_at, updated_at 5x3cm]
+        DB1[Destinations Table]
+        DB2[Users Table]
         DB1 --> DB2
     end
 
